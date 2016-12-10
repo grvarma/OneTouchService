@@ -6,14 +6,14 @@ import java.util.List;
 import com.onetouch.vo.ClientDetails;
 
 public class AadharDb {
-
+	
 	private static List<ClientDetails> getClienDataForBiometric() {
 		List<ClientDetails> listOfClientDetails = new ArrayList<ClientDetails>();
 		for (int i = 1; i < 11; i++) {
 			ClientDetails clientDetailsObj = new ClientDetails();
 			clientDetailsObj.setAadharNo("aadharNo" + i);
 			clientDetailsObj.setBiometric("biometric" + i);
-			clientDetailsObj.setRegisteredBankAccountNo("registeredBankAccountNo" + i);
+			clientDetailsObj.setRegisteredBankAccountNo("clientAccount" + i);
 			clientDetailsObj.setRegisteredMobileNo("registeredMobileNo" + i);
 			listOfClientDetails.add(clientDetailsObj);
 		}
@@ -24,7 +24,7 @@ public class AadharDb {
 	public static ClientDetails getClientData(String argBiometric) {
 
 		for (ClientDetails clientDetails : getClienDataForBiometric()) {
-			if (clientDetails.getBiometric() == argBiometric) {
+			if (clientDetails.getBiometric().equals(argBiometric)) {
 				return clientDetails;
 			}
 		}

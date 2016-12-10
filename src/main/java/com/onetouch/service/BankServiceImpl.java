@@ -10,7 +10,7 @@ public class BankServiceImpl implements IBankService {
 	static {
 		for (int i = 1; i < 11; i++) {
 			clientAccounts.put("clientAccount" + i, i * 500 + "");
-			partyAccounts.put("party" + i, "partyAccount" + i);
+			partyAccounts.put("partyId" + i, "partyAccount" + i);
 			partyAccountsBalance.put("partyAccount" + i, 1000 * i + "");
 		}
 	}
